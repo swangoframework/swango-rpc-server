@@ -1,0 +1,17 @@
+{
+    "require": {
+        "swango/aliyun-slb": "^0.1.15",
+        "swango/http_server": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Swango\\Rpc\\Server\\": "src"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
