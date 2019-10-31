@@ -1,4 +1,11 @@
 {
+    "name" : "swango/rpc-server",
+    "license" : "Apache-2.0",
+    "keywords" : [
+        "php",
+        "swoole",
+        "rpc"
+    ],
     "require": {
         "swango/aliyun-slb": "^0.1.15",
         "swango/http_server": "^1.1"
