@@ -60,7 +60,8 @@ class Handler extends \Swango\HttpServer\Handler {
             $data = null;
         }
 
-        $controller->jsonResponse($data, $enmsg, $cnmsg, $code);
+        if (isset($controller))
+            $controller->jsonResponse($data, $enmsg, $cnmsg, $code);
 
         \FileLog::logThrowable($e, \Swango\Environment::getDir()->log . 'error/',
             sprintf('%s : %s | %s | %s | %s | ', $request->header['x-forwarded-for'] ?? $request->server['remote_addr'],
