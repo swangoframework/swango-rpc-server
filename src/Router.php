@@ -1,8 +1,9 @@
 <?php
 namespace Swango\Rpc\Server;
 class Router extends \Swango\HttpServer\Router {
+    private $request, $host;
     private static $cache = [];
-    public static function getInstance(?\Swoole\Http\Request $request = null): self {
+    public static function getInstance(?\Swoole\Http\Request $request = null): Router {
         $ob = \SysContext::get('router');
         if (isset($ob))
             return $ob;
