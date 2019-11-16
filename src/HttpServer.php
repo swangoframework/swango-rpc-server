@@ -11,9 +11,9 @@ class HttpServer extends \Swango\HttpServer {
         $request_time = (int)$request_time_float;
         $client_ip = $request->header['x-forwarded-for'] ?? $request->server['remote_addr'];
         $client_ip_int = ip2long($client_ip);
-        $local_ip_right = ip2long(Environment::getServiceConfig()->local_ip) % 0x10000;
+        $local_ip_right = ip2long(Environment::getServiceConfig()->local_ip) & 0xFFFF;
         $request_id = sprintf('%08x-%04x-4%03x-%x%03x-%07x%05x', $client_ip_int, $local_ip_right, mt_rand(0, 0xFFF),
-            mt_rand(8, 0xB), mt_rand(0, 0xFFF), ((int)$request_time) >> 4, $count % 0x100000);
+            mt_rand(8, 0xB), mt_rand(0, 0xFFF), $request_time >> 4, $count & 0xFFFFF);
         \SysContext::set('request_id', $request_id);
         $response->header('X-Request-ID', $request_id);
 
