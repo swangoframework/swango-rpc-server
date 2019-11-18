@@ -1,7 +1,7 @@
 <?php
 namespace Swango\Rpc\Server;
 class Router extends \Swango\HttpServer\Router {
-    public static function getInstance(?\Swoole\Http\Request $request = null): Router {
+    public static function getInstance(?\Swoole\Http\Request $request = null):  \Swango\HttpServer\Router {
         $ob = \SysContext::get('router');
         if (isset($ob))
             return $ob;
