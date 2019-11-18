@@ -41,7 +41,7 @@ class HttpServer extends \Swango\HttpServer {
         -- self::$worker->worker_http_request_counter;
 
         $end_time = microtime(true);
-        $response_string = sprintf("#$user_id (%s) %.3fms", \session::getId(), ($end_time - $request_time) * 1000) .
+        $response_string = sprintf("#$user_id (%s) %.3fms", \session::getId(), ($end_time - $request_time_float) * 1000) .
              " [$code]$enmsg";
         if ($code !== 200 || $enmsg !== 'ok')
             $response_string .= ' ' . $cnmsg;
