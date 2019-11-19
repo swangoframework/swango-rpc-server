@@ -7,7 +7,7 @@
         "rpc"
     ],
     "require": {
-        "swango/aliyun-slb": "^0.1.15",
+        "swango/aliyun-slb": "^0.1.18",
         "swango/http_server": "^1.1"
     },
     "autoload": {
