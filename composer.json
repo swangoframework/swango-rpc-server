@@ -14,7 +14,7 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Swango\\Rpc\\Server\\" : "src"
+            "Swango\\Rpc\\Server\\" : "src/"
         },
         "classmap" : [
             "src/Server.php"
