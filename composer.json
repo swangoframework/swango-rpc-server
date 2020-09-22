@@ -8,7 +8,8 @@
     ],
     "require" : {
         "php" : ">=7.4",
-        "swango/aliyun-slb" : "^0.1.18",
+        "ext-json" : "*",
+        "swango/aliyun-slb" : "^1.0",
         "swango/http_server" : "^2.0"
     },
     "autoload" : {
