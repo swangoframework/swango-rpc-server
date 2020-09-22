@@ -3,7 +3,15 @@ namespace Swango\Rpc\Server;
 use Swango\HttpServer\Controller;
 class Handler extends \Swango\HttpServer\Handler {
     public static function start(\Swoole\Http\Request $request, \Swoole\Http\Response $response): array {
-        if (strtoupper($request->server['request_method']) !== 'POST') {
+        $method = strtoupper($request->server['request_method']);
+        if ('HEAD' === $method) {
+            $response->status(200);
+            return [
+                200,
+                'ok',
+                ''
+            ];
+        } elseif ('POST' !== $method) {
             $response->status(405);
             return [
                 405,
