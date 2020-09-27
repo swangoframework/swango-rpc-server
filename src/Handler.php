@@ -86,9 +86,8 @@ class Handler extends \Swango\HttpServer\Handler {
         ];
     }
     public static function end() {
-        try {
+        if (Router::exists()) {
             Router::getInstance()->detachSwooleRequest();
-        } catch (\Throwable $e) {
         }
         $controller = Controller::getInstance(false);
         if (isset($controller)) {
