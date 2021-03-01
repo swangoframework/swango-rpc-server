@@ -10,7 +10,7 @@
         "php" : ">=7.4",
         "ext-json" : "*",
         "swango/aliyun-slb" : "^1.0",
-        "swango/http_server" : "^2.0"
+        "swango/http_server" : "^2.0.16"
     },
     "autoload" : {
         "psr-4" : {

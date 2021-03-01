@@ -85,7 +85,7 @@ class Handler extends \Swango\HttpServer\Handler {
             $cnmsg
         ];
     }
-    public static function end() {
+    public static function end(): void {
         if (Router::exists()) {
             Router::getInstance()->detachSwooleRequest();
         }
